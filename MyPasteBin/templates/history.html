@@ -6,7 +6,9 @@
         <tbody>
             {% for element in pastebins %}
                 <tr>
-                    <td>{{ element.content|truncatechars:40 }}</td>
+                    <td>
+                        <a class="nav-link" href="{% url 'bin' element.id %}">{{ element.content|truncatechars:40 }}</a>
+                    </td>
                 </tr>
             {% endfor %}
         <tbody>

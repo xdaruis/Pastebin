@@ -20,21 +20,6 @@ def history(request):
     pastebins = text.objects.all()
     return render(request, 'history.html', {'pastebins': pastebins})
 
-
-
-
-
-# def add(request):
-#     submitted = False
-#     if request.method == 'POST':
-#         form = textForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             # return HttpResponseRedirect('/add?submitted=True')
-#             return HttpResponseRedirect('/history')
-#     else:
-#         form = textForm
-#         if submitted in request.GET:
-#             submitted = True
-#     # context = {'form': form, 'submitted': submitted}
-#     return render(request, 'add.html', {'form': form, 'submitted': submitted})
+def bin(request, text_id):
+    pastebin = text.objects.get(pk=text_id)
+    return render(request, 'bin.html', {'pastebin': pastebin}) 
