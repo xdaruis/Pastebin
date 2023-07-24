@@ -20,6 +20,6 @@ def history(request):
     pastebins = text.objects.all()
     return render(request, 'history.html', {'pastebins': pastebins})
 
-def bin(request, text_id):
-    pastebin = text.objects.get(pk=text_id)
-    return render(request, 'bin.html', {'pastebin': pastebin}) 
+def displayContent(request, text_id):
+    actPastebin = text.objects.get(pk=text_id)
+    return render(request, 'displayContent.html', {'actPastebin': actPastebin}) 
